@@ -4,7 +4,7 @@ resource "aws_security_group" "allow_tls" {
   vpc_id      = var.vpc_id
 
 dynamic "ingress" {
-    for_each = var.inbound_rules
+    for_each = var.ingress_rules
     content{
       from_port       = ingress.value["from_port"]
       to_port         = ingress.value["to_port"]
